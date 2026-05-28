@@ -14,18 +14,16 @@ function Menu() {
 
   // Fetch Products
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    axios.get('http://localhost:5000/api/products', {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(res => {
-        setProducts(res.data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error(err);
-        setLoading(false);
-      });
+    axios.get('http://localhost:5000/api/products')
+  .then(res => {
+    setProducts(res.data);
+    setLoading(false);
+  })
+  .catch(err => {
+    console.error("Error fetching products:", err);
+    setLoading(false);
+    // alert("Failed to load menu. Please check if backend is running.");
+  });
   }, []);
 
   const addToCart = (product) => {

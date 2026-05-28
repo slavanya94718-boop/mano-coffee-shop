@@ -50,7 +50,8 @@ function OrderHistory() {
               <div key={index} className="bg-white rounded-3xl shadow-xl p-8">
                 <div className="flex justify-between border-b pb-4 mb-4">
                   <div>
-                    <p className="font-bold text-lg">Order #{order.orderId || order._id?.slice(-6)}</p>
+                  // Change this line:
+<p className="font-bold text-lg">Order #{order.orderId || order._id?.slice(-6) || index + 1}</p>
                     <p className="text-gray-500 text-sm">{new Date(order.date).toLocaleString()}</p>
                   </div>
                   <p className="text-2xl font-bold text-amber-800">₹{order.total}</p>

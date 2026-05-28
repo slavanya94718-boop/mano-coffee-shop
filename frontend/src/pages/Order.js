@@ -35,15 +35,14 @@ function Order() {
     const token = localStorage.getItem('token');
     const user = JSON.parse(localStorage.getItem('user') || '{}');
 
-    const orderPayload = {
-      userId: user.id || user._id || "guest",
-      name: formData.name,
-      address: formData.address,
-      mobile: formData.mobile,
-      items: cart,
-      total: total
-    };
-
+const orderPayload = {
+  userId: user._id || "guest",   // ← Change to user._id
+  name: formData.name,
+  address: formData.address,
+  mobile: formData.mobile,
+  items: cart,
+  total: total
+};
     try {
       await axios.post('http://localhost:5000/api/orders', orderPayload, {
         headers: { Authorization: `Bearer ${token}` }
