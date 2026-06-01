@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Mano Coffee Shop Backend",
   "main": "server.js",
+  "homepage": "https://github.com/slavanya94718-boop/cafe-coffee",
   "type": "commonjs",
   "scripts": {
     "start": "node server.js",
