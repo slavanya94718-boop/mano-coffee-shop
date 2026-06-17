@@ -14,7 +14,7 @@ function Menu() {
 
   // Fetch Products
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://mano-coffee-shop-1.onrender.com//api/products')
   .then(res => {
     setProducts(res.data);
     setLoading(false);
