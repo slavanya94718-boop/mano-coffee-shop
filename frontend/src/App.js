@@ -1,63 +1,32 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Menu from './pages/Menu';
-import Order from './pages/Order';
-import OrderHistory from './pages/OrderHistory';   // ←←← Import add pannanum
-import ProtectedRoute from './components/ProtectedRoute';
+import React from "react";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        {/* Public Routes */}
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+    <div style={{
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      background: "#fff8f0",
+      fontFamily: "Arial, sans-serif"
+    }}>
 
-        {/* Protected Routes */}
-        <Route 
-          path="/home" 
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          } 
-        />
-        
-        <Route 
-          path="/menu" 
-          element={
-            <ProtectedRoute>
-              <Menu />
-            </ProtectedRoute>
-          } 
-        />
-        
-        <Route 
-          path="/order" 
-          element={
-            <ProtectedRoute>
-              <Order />
-            </ProtectedRoute>
-          } 
-        />
+      <h1 style={{
+        color: "#6f4e37",
+        fontSize: "45px"
+      }}>
+        Mano Coffee Shop
+      </h1>
 
-        <Route 
-          path="/orders" 
-          element={
-            <ProtectedRoute>
-              <OrderHistory />
-            </ProtectedRoute>
-          } 
-        />
+      <p style={{
+        fontSize: "22px",
+        color: "#333"
+      }}>
+        React Working Successfully ☕
+      </p>
 
-        {/* Redirect unknown routes */}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </Router>
+    </div>
   );
 }
 
